@@ -1,5 +1,7 @@
 package app.rbac.rbac.Entity;
 
+import java.io.Serializable;
+
 /**
  * @author MJ Makki
  * @version 1.0
@@ -8,5 +10,5 @@ package app.rbac.rbac.Entity;
  * @since long time ago
  */
 
-public class Role {
+public class Role implements Serializable {
 }
