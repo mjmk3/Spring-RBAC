@@ -17,13 +17,6 @@ spring:
     jdbc:
       initialize-schema: always
 
-  servlet:
-    multipart:
-      enabled: true
-      file-size-threshold: 2KB
-      max-file-size: 100GB
-      max-request-size: 107GB
-
 jwt:
   secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
 

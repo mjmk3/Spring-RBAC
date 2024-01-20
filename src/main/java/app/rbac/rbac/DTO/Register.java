@@ -1,5 +1,10 @@
 package app.rbac.rbac.DTO;
 
+import app.rbac.rbac.Entity.*;
+import lombok.*;
+
+import java.util.Date;
+
 /**
  * @author MJ Makki
  * @version 1.0
@@ -8,5 +13,16 @@ package app.rbac.rbac.DTO;
  * @since long time ago
  */
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Register {
+    private String phone;
+    private String email;
+    private String password;
+    private Date joinDate;
+    private Role role;
+    private Privilege privilege;
 }

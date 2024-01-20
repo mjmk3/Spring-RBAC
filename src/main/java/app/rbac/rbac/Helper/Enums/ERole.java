@@ -1,6 +1,4 @@
-package app.rbac.rbac.DTO;
-
-import lombok.*;
+package app.rbac.rbac.Helper.Enums;
 
 /**
  * @author MJ Makki
@@ -10,12 +8,9 @@ import lombok.*;
  * @since long time ago
  */
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class Login {
-    private String phone;
-    private String password;
+public enum ERole {
+    ADMIN,
+    MANAGER,
+    EDITOR,
+    USER
 }
