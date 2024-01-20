@@ -21,7 +21,7 @@ jwt:
   secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
 
 server:
-  port: 8099
+  port: 8008
 
 mfa:
   enabled: false
