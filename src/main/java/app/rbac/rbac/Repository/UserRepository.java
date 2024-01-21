@@ -4,6 +4,8 @@ import app.rbac.rbac.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author MJ Makki
  * @version 1.0
@@ -14,4 +16,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    List<User> findByIsDeletedFalse();
+    List<User> findByIsDeletedTrue();
+    List<User> findByIsActiveFalse();
+    List<User> findByIsActiveTrue();
+    User findUserById(Long id);
+    User findByPhone(String phone);
+    User findByEmail(String email);
+    Boolean existsByPhone(String phone);
+    Boolean existsByEmail(String email);
 }

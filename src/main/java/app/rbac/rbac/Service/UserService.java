@@ -1,5 +1,7 @@
 package app.rbac.rbac.Service;
 
+import app.rbac.rbac.Dto.Register;
+import app.rbac.rbac.Helper.Exception.AuthApiException;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,4 +14,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
+    String register(Register register) throws AuthApiException;
 }
