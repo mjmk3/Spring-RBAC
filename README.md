@@ -21,4 +21,7 @@ read,
 Besides that, using Multi-Factor Authentication for system access
 
 
+Using Open Documentation API for Swagger
+
+
 Also will add all the packages and dependencies that will be used with this structure
