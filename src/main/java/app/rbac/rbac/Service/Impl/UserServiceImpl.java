@@ -1,16 +1,19 @@
 package app.rbac.rbac.Service.Impl;
 
 import app.rbac.rbac.Config.MfaConfig;
+import app.rbac.rbac.DTO.Register;
 import app.rbac.rbac.DTO.UserMapper;
 import app.rbac.rbac.Entity.Privilege;
 import app.rbac.rbac.Entity.Role;
 import app.rbac.rbac.Entity.User;
+import app.rbac.rbac.Helper.Enums.EPrivilege;
 import app.rbac.rbac.Helper.Enums.ERole;
 import app.rbac.rbac.Helper.Exception.User.*;
 import app.rbac.rbac.Repo.*;
 import app.rbac.rbac.Service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -302,5 +305,39 @@ public class UserServiceImpl implements UserService {
         } else {
             throw new RuntimeException("User not found");
         }
+    }
+
+    @Override
+    public ResponseEntity<String> createUserWithRoleAndPrivilege(Register register, String roleName, List<String> privilegeNames) {
+        // Create a new User object from the Register DTO
+        User user = userMapper.mapRegisterDtoToUserEntity(register);
+
+        //Adding UUID to the user
+        user.setUuid(UUID.randomUUID());
+
+        // Create a new Role object with the specified name
+        Role role = new Role();
+        role.setRoleName(ERole.valueOf(roleName));
+
+        // Set the privileges for the role
+        for (String privilegeName : privilegeNames) {
+            Privilege privilege = new Privilege();
+            privilege.setPrivilegeName(EPrivilege.valueOf(privilegeName));
+            role.addPrivilege(privilege);
+        }
+
+        // Create the list of roles for the user
+        List<Role> roles = new ArrayList<>();
+        roles.add(role);
+
+        // Assign the roles to the user
+        user.setRoles(roles);
+
+        // Save the user and role to the database
+        roleRepo.save(role);
+        userRepo.save(user);
+
+        // Return a success response indicating the registration was successful
+        return ResponseEntity.ok("Registration successful");
     }
 }
