@@ -25,4 +25,4 @@ for jwt dependecy will use:
 - jjwt(implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.5')
 - java auth0(implementation group: 'com.auth0', name: 'java-jwt', version: '4.4.0')
   
-** you can find them at https://www.mvnrepository.com
+**  you can find them at https://www.mvnrepository.com
