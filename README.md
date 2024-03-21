@@ -9,7 +9,7 @@ Working with authentication and authorization to control everything on the syste
 
 - For Privileges (* in the Spring you have to you privilege or permission instead of authority becasue the default name convention inside framework is authority so you have to use what recommend at first to avoid the conflict)
 
--Create, Read, Update, Delete
+- Create, Read, Update, Delete
 
 # ##############
 Besides that, using Multi-Factor Authentication for system access
