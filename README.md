@@ -22,6 +22,6 @@ Also will add all the packages and dependencies that will be used with this stru
 # ######################
 for jwt dependecy in this branch will use:
 
-- java auth0(implementation group: 'com.auth0', name: 'java-jwt', version: '4.4.0')
+- java auth0 version(implementation group: 'com.auth0', name: 'java-jwt', version: '4.4.0')
   
 **  you can find them at https://www.mvnrepository.com
