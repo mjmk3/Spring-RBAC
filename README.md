@@ -22,6 +22,6 @@ Also will add all the packages and dependencies that will be used with this stru
 # ######################
 for jwt dependecy in this branch will use:
 
-- jjwt(implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.5'
+- jjwt version(implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.5'
   
 **  you can find them at https://www.mvnrepository.com
