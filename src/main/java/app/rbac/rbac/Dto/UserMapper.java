@@ -1,4 +1,4 @@
-package app.rbac.rbac.DTO;
+package app.rbac.rbac.Dto;
 
 import app.rbac.rbac.Entity.User;
 import org.springframework.stereotype.Component;

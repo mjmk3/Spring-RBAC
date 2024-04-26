@@ -40,7 +40,7 @@ public class SecurityConfig {
                         .requestMatchers(PUBLIC_URLS)
                         .permitAll()
                         .requestMatchers("/file/**")
-                        .hasAnyRole("ADMIN", "MANAGER", "ISSUER", "TELLER","MERCHANT", "CUSTOMER")
+                        .hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/file/**")
                         .hasAnyAuthority("CREATE", "UPDATE")
                         .anyRequest()

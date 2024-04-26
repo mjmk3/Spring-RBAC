@@ -1,8 +1,8 @@
 package app.rbac.rbac.Service.Impl;
 
 import app.rbac.rbac.Config.MfaConfig;
-import app.rbac.rbac.DTO.Register;
-import app.rbac.rbac.DTO.UserMapper;
+import app.rbac.rbac.Dto.Register;
+import app.rbac.rbac.Dto.UserMapper;
 import app.rbac.rbac.Entity.Privilege;
 import app.rbac.rbac.Entity.Role;
 import app.rbac.rbac.Entity.User;

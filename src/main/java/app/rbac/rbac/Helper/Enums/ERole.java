@@ -10,7 +10,5 @@ package app.rbac.rbac.Helper.Enums;
 
 public enum ERole {
     ADMIN,
-    MANAGER,
-    EDITOR,
     USER
 }

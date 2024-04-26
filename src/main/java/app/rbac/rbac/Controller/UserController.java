@@ -7,8 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +25,7 @@ import java.util.List;
 @RequestMapping("/user")
 @CrossOrigin(origins = "*")
 @Tag(name = "Users")
-@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'EDITOR')")
+@PreAuthorize("hasRole('ADMIN')")
 public class UserController {
     private final UserService userService;
 
@@ -45,11 +44,10 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('ADD')")
+    @PreAuthorize("hasAuthority('CREATE')")
     @PostMapping("/addUser")
     public ResponseEntity<User> addUser(
             @RequestParam String phone,
-            @RequestParam String username,
             @RequestParam String email,
             @RequestParam String password,
             @RequestParam List<String> roleNames,
@@ -76,7 +74,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('WATCH')")
+    @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/list")
     public ResponseEntity<List<User>> listAllUsers() {
         List<User> users = userService.listAllUsers();
@@ -93,7 +91,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('WATCH')")
+    @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/listRole")
     public ResponseEntity<List<Role>> listAllRoles() {
         List<Role> roles = userService.listAllRoles();
@@ -110,7 +108,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('WATCH')")
+    @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/listPrivilege")
     public ResponseEntity<List<Privilege>> listAllPrivileges() {
         List<Privilege> privileges = userService.listAllPrivileges();
@@ -127,7 +125,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('WATCH')")
+    @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/{phone}")
     public ResponseEntity<User> findUserByPhone(@PathVariable("phone") String phone) {
         User user = userService.findUserByPhone(phone);
@@ -148,7 +146,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('WATCH')")
+    @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/{email}")
     public ResponseEntity<User> findUserByEmail(@PathVariable("email") String email) {
         User user = userService.findUserByEmail(email);
@@ -223,7 +221,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('REMOVE')")
+    @PreAuthorize("hasAuthority('DELETE')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable("id") long id) {
         try {
@@ -244,7 +242,7 @@ public class UserController {
                     )
             }
     )
-    @PreAuthorize("hasAuthority('REMOVE')")
+    @PreAuthorize("hasAuthority('DELETE')")
     @DeleteMapping("/soft-delete/{id}")
     public ResponseEntity<String> softDeleteUser(@PathVariable long id) {
         userService.softDeleteUser(id);
