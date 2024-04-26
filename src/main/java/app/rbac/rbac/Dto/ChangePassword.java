@@ -14,7 +14,6 @@ import lombok.*;
 @Setter
 @Builder
 public class ChangePassword {
-
     private String currentPassword;
     private String newPassword;
     private String confirmationPassword;

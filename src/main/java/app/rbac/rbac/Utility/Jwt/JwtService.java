@@ -1,4 +1,4 @@
-package app.rbac.rbac.Helper.Enums;
+package app.rbac.rbac.Utility.Jwt;
 
 /**
  * @author MJ Makki
@@ -8,7 +8,5 @@ package app.rbac.rbac.Helper.Enums;
  * @since long time ago
  */
 
-public enum ERole {
-    ADMIN,
-    USER
+public class JwtService {
 }
