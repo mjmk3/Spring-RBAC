@@ -1,13 +1,13 @@
 # Role Based Access Control System with Spring(Basic Configuration for any System)
-# ###############
-Working with authentication and authorization to control everything on the system
 
-- For roles
+# Working with authentication and authorization to control everything on the system
+
+- For Roles
 
 -Admin, User
 
 
-- For Privileges ( * in the Spring you have to you privilege or permission instead of authority becasue the default name convention inside framework is authority so you have to use what recommend at first to avoid the conflict)
+- For Privileges (Permissions) ( * in the Spring you have to you privilege or permission instead of authority becasue the default name convention inside framework is authority so you have to use what recommend at first to avoid the conflict)
 
 -Create, Read, Update, Delete
 
